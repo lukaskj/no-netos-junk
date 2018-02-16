@@ -1,0 +1,31 @@
+{
+   "name": "noNetosJunk",
+   "version": "1.0",
+   "manifest_version": 2,
+   "default_locale": "pt_BR",
+   "icons": {
+      "16": "img/icon16.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+   },
+   "background": {
+      "scripts": [
+         "/src/background.js"
+      ]
+   },
+   "content_scripts": [
+      {
+         "js": [
+            "/lib/jquery-3.3.1.min.js",
+            "/src/contentScript.js"
+         ],
+         "matches": [
+            "*://*.youtube.com/*"
+         ]
+      }
+   ],
+   "permissions": [
+      "tabs",
+      "*://*.youtube.com/*"
+   ]
+}
